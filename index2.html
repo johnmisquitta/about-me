@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Layout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    body {
+           /* font-family: Arial, sans-serif; */
+           font-family: "Inter", sans-serif;
+           font-size: 0.875rem;
+
+           margin: 0;
+           background: #ffffff;
+       }
+
+       .left-partition {
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 100vh; /* Full height of the viewport */
+         width: 100vh; /* Adjust width as necessary */
+         /* margin-left: 10px; */
+         padding: 120px 0px 0px 110px;
+         background-color: #ffffff;
+         display: flex;
+         flex-direction: column;
+         /* align-items: center; */
+         /* justify-content: center; */
+         /* text-align: center; */
+     }
+
+       /* .left-partition {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+} */
+
+       .right-partition {
+         margin-left: 620px;
+           height: 100%;
+           padding: 20px;
+           padding-right: 110px;
+           padding-left: 110px;
+           background-color: #ffffff;
+       }
+
+       .profile-photo {
+           width: 150px;
+           height: 150px;
+           border-radius: 50%;
+           object-fit: cover;
+           margin-bottom: 20px;
+       }
+
+       .name {
+           font-weight: bold;
+           font-size: 2rem;
+       }
+
+       .designation {
+           font-size: 1.25rem;
+           margin-bottom: 10px;
+       }
+
+       .description {
+           font-size: 0.875rem;
+           color: #6c757d;
+       }
+
+       .wrapper_1 {
+           display: grid;
+           grid-template-columns: repeat(4, 1fr);
+           grid-template-rows: repeat(1, 1fr);
+
+           grid-gap: 20px;
+           padding: 10px;
+       }
+       .wrapper_1 > * {
+            aspect-ratio: 1 / 1;
+            background-color: lightblue;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .wrapper_2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            grid-gap: 20px;
+            padding: 10px;
+        }
+        .wrapper_2 > * {
+             aspect-ratio: 2 / 2;
+             background-color: lightblue;
+             display: flex;
+             /* align-items: center; */
+             justify-content: center;
+         }
+
+
+         .wrapper_3 {
+             display: grid;
+             grid-template-columns: repeat(4, 1fr);
+             grid-template-rows: repeat(1, 1fr);
+
+             grid-gap: 20px;
+             padding: 10px;
+         }
+         .wrapper_3 > * {
+              aspect-ratio: 2 / 1;
+              background-color: lightblue;
+              display: flex;
+              /* align-items: center; */
+              justify-content: center;
+          }
+
+       .container {
+           background-color: #fff;
+           border: 2px solid #333;
+           border-radius: 20px;
+           box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+           overflow: hidden;
+           display: flex;
+           flex-direction: column;
+       }
+       .container_1 {
+          background-color: #fff;
+          border: 2px solid #333;
+          border-radius: 20px;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          /* align-items: flex-start; */
+          padding: 20px;
+      }
+
+      .container_1 img {
+          margin-top: 20px;
+          margin-left: 20px;
+      }
+      .container_4 {
+            position: relative;
+            background-color: #ebebeb;
+            cursor: pointer;
+            width: 300px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            margin: 50px;
+            border-radius: 10px; /* Optional: adds rounded corners */
+            text-align: center; /* Optional: centers text horizontally */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 0;
+
+        }
+
+        .container_4 img {
+          position: absolute;
+   top: -50px; /* Adjust the value to move the image up or down */
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100px; /* Adjust the width as needed */
+   height: 100px; /* Maintain aspect ratio */
+   border-radius: 50%; /* Makes the image circular */
+   border: 3px solid white; /* Adds a white border around the image */
+   z-index: 1;
+
+        }
+
+
+      /* .container_1 p {
+          margin-top: 20px;
+          margin-left: 20px;
+      } */
+
+       .content {
+           flex-grow: 1;
+           overflow-y: auto;
+           padding: 10px;
+           font-size: 0.875rem
+           color: #000;
+       }
+
+       .scrollable {
+           overflow-y: auto;
+           padding-right: 0; /* Adjusted from 15px */
+           box-sizing: content-box;
+       }
+
+       .scrollable::-webkit-scrollbar {
+           width: 0px;
+       }
+
+       .scrollable::-webkit-scrollbar-track {
+           background: #f1f1f1;
+       }
+
+       .scrollable::-webkit-scrollbar-thumb {
+           background-color: #888;
+           border-radius: 4px;
+       }
+
+       .scrollable::-webkit-scrollbar-thumb:hover {
+           background: #555;
+       }
+
+       .project {
+
+           text-align: center;
+           justify-content: center;
+
+           padding: 10px;
+           border-top: 2px solid #333;
+       }
+
+       .project h3 {
+           font-size: 0.875rem;
+           color: #000;
+           margin: 0;
+       }
+
+       .button-container {
+           display: flex;
+           justify-content: space-around;
+           margin-top: 20px;
+       }
+
+       .button {
+           display: inline-block;
+           padding: 10px 20px;
+           margin: 10px;
+           border: none;
+           border-radius: 5px;
+           background-color: #4CAF50;
+           color: white;
+           font-size: 16px;
+           cursor: pointer;
+           text-decoration: none;
+       }
+
+       .grid-item {
+           border: 1px solid #333;
+           border-radius: 20px;
+           box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+           overflow: hidden;
+           background: #fff;
+           display: flex;
+           flex-direction: column;
+           padding: 0;
+           position: relative;
+       }
+
+       .grid-item-1x1 {
+           grid-column: span 1;
+           grid-row: span 1;
+           /* padding-top: calc(100% / 1); */
+       }
+
+       .grid-item-1x2 {
+           grid-column: span 1;
+           grid-row: span 2;
+           padding-top: calc(100% / 2);
+       }
+
+       .grid-item-2x1 {
+           grid-column: span 2;
+           grid-row: span 1;
+           padding-top: calc(100% / 2);
+       }
+
+       .grid-item-2x2 {
+           grid-column: span 2;
+           grid-row: span 2;
+           /* padding-top: calc(100% / 2); */
+       }
+
+       .container .content {
+           flex-grow: 1;
+           overflow-y: auto;
+       }
+       .relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.rounded-full {
+  border-radius: 50%;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.styles_marker__Mzm27 {
+  // Add additional styles if needed
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inset-[3px] {
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+}
+
+.inset-[5px] {
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+}
+
+.bg-[#679BFF] {
+  background-color: #679bff;
+}
+
+.styles_marker-border__fxi6v {
+  // Add additional styles if needed
+}
+@keyframes example-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.relative.flex.h-full.w-full.items-center.justify-center.rounded-full.bg-white.styles_marker__Mzm27 {
+  animation: example-animation 2s infinite; /* Example animation */
+}
+
+
+.blue-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-color: rgb(103 155 255 );
+}
+
+.white-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow for animated circle */
+
+}
+
+.animated-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgb(103 155 255 );
+
+  animation: expand 2s ease-in-out infinite;
+  opacity: 1; /* Initial opacity set to 0 */
+
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 1;
+
+  }
+  to {
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+
+  }
+}
+   </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-5 left-partition">
+                <img src="./profile_pic.png" alt="Profile Photo" class="profile-photo">
+                <div class="name">John Misquitta</div>
+                <div class="designation">Software Engineer</div>
+                <div class="description">I am a Fullstack Software Engineer and AI Developer with a Master's degree in Computer Applications. I love working on projects in Artificial Intelligence, Machine Learning, and web development<br>I have experience with many different tools and technologies, which helps me build complete and effective solutions. Whether it's making easy-to-use websites, strong backend systems, or smart AI models, I enjoy solving tough problems.<br>I'm excited to meet and work with others who share my passion for technology. <br><br>Let's connect and create great things together.</div>
+                <div class="description">For projects and collaboration email me at</div>
+                <div class="description">➥ johnmisquittaoffice@gmail.com</div>
+            </div>
+            <div class="col-12 col-md-7 right-partition">
+
+              <p style="font-size: 18px; font-family: sans-serif ; margin-bottom:10px;margin-left:25px;margin-top:50px ; color:#393838"><b>WELCOME TO MY SPACE</b></p>
+
+
+                <div class="wrapper_1">
+                  <div class="container_1 grid-item grid-item-1x1" style="background-color:#caf0f8;border: 3px solid #67e4ff; cursor: pointer;" onclick="window.location.href='https://www.linkedin.com/in/john-misquitta/'">
+                    <img src="./linkedin.png" alt="Profile Photo" height="50px" width="50px">
+                    <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                    <p style="margin: 1rem; color:#565656"><b>LinkedIn Profile</b></p>
+                  </div>
+
+
+
+                  <div class="container_1 grid-item grid-item-1x1" style="background-color:#ebebeb;border: 3px solid #b3b3b3; cursor: pointer;" onclick="window.location.href='https://github.com/johnmisquitta'">
+                        <img src="./github.png" alt="Profile Photo" height="50px" width="50px">
+                        <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                        <p style="margin: 1rem; color:#565656 "><b>Github</b></p>
+                      </div>
+                    <div class="container_1 grid-item grid-item-1x1" style="background-color:#FFFAD7;border: 3px solid #ffe10f; cursor: pointer;" onclick="window.location.href='mailto://johnmisquittaoffice@gmail.com'">
+                      <img src="./gmail.png" alt="Profile Photo" height="50px" width="50px">
+                      <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                      <p style="margin: 1rem; color:#565656 "><b>Gmail</b></p>
+                    </div>
+                    <div class="container_1 grid-item grid-item-1x1" style="background-color:#ffe5ec;border: 3px solid #ff9ab5;cursor: pointer;" onclick="window.location.href='https://drive.google.com/file/d/1eANaRMR5UUQXYG85d9rBbMVDvBPsf0RM/view?usp=sharing'">
+                        <img src="./pdf.png" alt="Profile Photo" height="50px" width="50px">
+                        <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                        <p style="margin: 1rem; color:#565656 "><b>Resume.pdf</b></p>
+                      </div>
+                  </div>
+
+
+
+
+                  <div class="wrapper_1">
+                    <div class="container_1 grid-item grid-item-1x1" style="background-color:#cffad2;border: 3px solid #51ff5e; cursor: pointer;" onclick="window.location.href='tel:+919820606859'">
+                      <img src="./mobile.png" alt="Profile Photo" height="50px" width="50px">
+                      <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                      <p style="margin: 1rem; color:#565656"><b>Phone</b></p>
+                    </div>
+
+                    <div class="container_1 grid-item grid-item-1x1" style="background-color:#ebebeb;border: 3px solid #3899ff;  cursor: pointer; background-image: url('./map.png'); background-size: cover; background-position: center;" onclick="window.location.href='https://www.google.com/maps/place/%E0%A4%AE%E0%A5%81%E0%A4%AE%E0%A5%8D%E0%A4%AC%E0%A4%88,+%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0/@19.082502,72.7163721,11z/data=!3m1!4b1!4m6!3m5!1s0x3be7c6306644edc1:0x5da4ed8f8d648c69!8m2!3d19.0759837!4d72.8776559!16zL20vMDR2bXA?entry=ttu'">
+                      <div class="animated-circle"></div>
+
+                      <div class="blue-circle"></div>
+                      <div class="white-border"></div>
+                        <p style="margin: 1rem; color: #565656;margin-bottom: 110px; font-size: 1.1rem" ><b>Mumbai</b></p>
+                        <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                    </div>
+
+
+                    </div>
+                    <p style="font-size: 18px; font-family: sans-serif ; margin-bottom:10px;margin-left:25px;margin-top:50px ; color:#393838"><b>MY SERVICE DECK</b></p>
+
+                  <div class="wrapper_2">
+                    <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#a6f9e8 ;border: 2px solid #09ffcd">
+                      <!-- <div class="header"> -->
+
+                      <!-- </div> -->
+                      <div class='content scrollable'>
+                        <p style="font-size: 18px"><b>Web Development</b></p>
+                          <p style="font-size: 15px">I and My Team create dynamic websites that work great and look fantastic. I'm skilled in HTML, CSS, JavaScript, and frameworks like Django, Flask, and WordPress. Whether you need a responsive site, better user interaction, or smoother backend operations, I can bring your ideas to life. Let's work together to build something amazing online!</p>
+
+                      </div>
+                      </div>
+                      <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#a6f9e8 ;border: 2px solid #09ffcd">
+                        <!-- <div class="header"> -->
+
+                        <!-- </div> -->
+                        <div class='content scrollable'>
+                          <p style="font-size: 18px"><b>AI Data Science</b></p>
+                            <p style="font-size: 15px">Passionate about AI and data science, I love developing projects that use machine learning NLP data analytics and computer vision. With my experience in Python, TensorFlow, and scikit-learn, I build insightful models and solutions that solve real world problems Let's collaborate to turn your data into actionable insights and achieve your goals efficiently.</p>
+
+                        </div>
+                        </div>
+
+                    </div>
+                    <p style="font-size: 18px; font-family: sans-serif ; margin-bottom:10px;margin-left:25px;margin-top:50px ; color:#393838"><b>CLIENT PROJECT PORTFOLIO</b></p>
+
+                    <div class="wrapper_3">
+                      <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                        <img src="./web_projects/project (11).png" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                          <img src="./web_projects/project (3).png" style="width: 100%; height: 100%; object-fit: cover;">
+                          </div>
+
+                      </div>
+                      <div class="wrapper_3">
+                        <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                          <img src="./web_projects/project (9).png" style="width: 100%; height: 100%; object-fit: cover;">
+                          </div>
+                          <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                            <img src="./web_projects/project (4).png" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+
+                        </div>
+                        <div class="wrapper_3">
+                          <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                            <img src="./web_projects/project (10).png" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                              <img src="./web_projects/project (6).png" style="width: 100%; height: 100%; object-fit: cover;">
+                              </div>
+
+                          </div>
+                          <div class="wrapper_3">
+                            <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                              <img src="./web_projects/project (8).png" style="width: 100%; height: 100%; object-fit: cover;">
+                              </div>
+                              <div class="container_3 grid-item grid-item-2x1" style="padding:0px">
+                                <img src="./web_projects/project (1).png" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <p style="font-size: 18px; font-family: sans-serif ; margin-bottom:10px;margin-left:25px;margin-top:50px ; color:#393838"><b>FULLSTACK PROJECTS</b></p>
+
+                            <div class="wrapper_2">
+
+                              <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#F6FFA6 ;border: 3px solid #daf013" onclick="window.location.href='https://github.com/johnmisquitta/NLP_Integrated_health_tracker'">
+                                <!-- <div class="header"> -->
+
+                                <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                                <!-- </div> -->
+                                <div class='content scrollable'>
+
+                                  <p style="font-size: 18px"><b>NLP INTEGRATED WORKOUT TRACKER</b></p>
+                                    <p style="font-size: 15px"><b>Project Description</b><br>Developed NLP-Driven workout tracking system using natural language processing to process exercise data, extract statistics, and seamlessly insert it into Google Sheets for comprehensive fitness analysis.Tech Stack - Python ,Nutritionx Api,Google Sheet Api ,Replit Terminal,Pixe.la</p>
+
+
+                                </div>
+                                </div>
+                                <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#F6FFA6 ;border: 3px solid #daf013" onclick="window.location.href='https://github.com/johnmisquitta/Multilingual_Dictionary_API'">
+                                  <!-- <div class="header"> -->
+                                  <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;">
+
+                                  <!-- </div> -->
+                                  <div class='content'>
+                                    <p style="font-size: 18px"><b>MULTILINGUAL WORD INSIGHT API</b></p>
+                                      <p style="font-size: 15px"><b>Project Description</b><br>API extracts curated words from Google Sheets, revealing theirmeanings, and translates effortlessly to Hindi and Marathi.Crafted for emails Ideal for those who wish to improve vocabulary.Tech Stack - Python ,Flask ,Google Sheet Api ,Render</p>
+
+                                  </div>
+                                  </div>
+
+                              </div>
+
+                              <p style="font-size: 18px; font-family: sans-serif ; margin-bottom:10px;margin-left:25px;margin-top:50px ; color:#393838"><b>AI / ML PROJECTS</b></p>
+
+                            <div class="wrapper_2">
+                              <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#D0BFFF ;border: 3px solid #b59bff">
+                                <!-- <div class="header"> -->
+                                <!-- <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;"> -->
+
+
+                                <!-- </div> -->
+                                <div class='content scrollable'>
+                                  <p style="font-size: 18px"><b>Sentiment Analysis on Social Media Posts (Natural Language Processing - NLP)</b></p>
+                                    <p style="font-size: 15px"><b>Project Description</b><br>Implemented a sentiment analysis system to analyze the sentiment of social media posts. The project utilized Natural Language Processing (NLP) techniques to preprocess text data and employed a machine learning model to classify posts as positive, negative, or neutral. The model was trained on a dataset of labeled social media posts and achieved good accuracy in sentiment prediction.</p>
+
+
+                                </div>
+                                </div>
+                                <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#D0BFFF ;border: 3px solid #b59bff">
+                                  <!-- <div class="header"> -->
+                                  <!-- <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;"> -->
+
+                                  <!-- </div> -->
+                                  <div class='content scrollable'>
+                                    <p style="font-size: 18px"><b>Image Classification using Convolutional Neural Networks (Computer Vision)</b></p>
+                                      <p style="font-size: 15px"><b>Project Description</b><br>Developed an image classification model using Convolutional Neural Networks (CNNs) to identify different categories of objects. The project involved collecting a dataset of images from various sources, preprocessing the images, and building a CNN model using TensorFlow and Keras. The model was trained and validated to achieve high accuracy in classifying objects such as animals, vehicles, an everyday items.</p>
+
+                                  </div>
+                                  </div>
+
+                              </div>
+
+
+
+                              <div class="wrapper_2">
+                                <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background:#D0BFFF ;border: 3px solid #b59bff">
+                                  <!-- <div class="header"> -->
+                                  <!-- <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;"> -->
+
+                                  <!-- </div> -->
+                                  <div class='content scrollable'>
+                                    <p style="font-size: 18px"><b>Handwritten Digit Recognition using Deep Learning (Deep Learning)</b></p>
+                                      <p style="font-size: 15px"><b>Project Description</b><br>Developed a deep learning model to recognize handwritten digits from the MNIST dataset. The project involved building a multi-layer neural network using TensorFlow and Keras, training the model on the MNIST dataset, and achieving high accuracy in digit recognition. Techniques such as dropout and batch normalization were used to improve the model's performance.</p>
+
+
+                                  </div>
+                                  </div>
+                                  <div class="container_1 grid-item grid-item-2x2" style="padding:5px; background-color:#D0BFFF ;border: 3px solid #b59bff">
+                                    <!-- <div class="header"> -->
+                                    <!-- <img src="./share_page.png" height="18px" width="18px" style="position: absolute; top: 0; right: 0; margin: 10px; opacity: 0.7;"> -->
+
+                                    <!-- </div> -->
+                                    <div class='content scrollable'>
+                                      <p style="font-size: 18px"><b>Object Detection using YOLO (Computer Vision)</b></p>
+                                        <p style="font-size: 15px"><b>Project Description</b><br>Developed an object detection system using the YOLO (You Only Look Once) algorithm to identify and locate multiple objects within images. The project involved training the YOLO model on a custom dataset, fine-tuning the model for higher accuracy, and deploying the system for real-time object detection applications.</p>
+
+                                    </div>
+                                    </div>
+
+                                </div>
+
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  </html>

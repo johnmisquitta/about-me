@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Partition Layout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+
+    background: #fcfcfc;
+    height: 100vh;
+    overflow: hidden; /* Prevent body scrolling */
+}
+
+.left-partition {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.right-partition {
+    height: 100vh;
+    overflow-y: auto; /* Enable scrolling */
+    padding: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+    background-color: #e9ecef;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.designation {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.wrapper {
+
+
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    /* height: calc(100vh - 40px); /* Adjusted for padding */
+    overflow-y: auto; /* Enable scrolling for the wrapper */
+}
+
+.container {
+
+    border: 2px solid #333;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px; /* Fixed width */
+    height: 300px; /* Adjusted height to accommodate content */
+    background: #fff;
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    background: #fcfcfc;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #000;
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 1em;
+    color: #000;
+}
+
+.scrollable {
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 15px;
+    box-sizing: content-box;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 0px;
+}
+
+.project {
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #333;
+}
+
+.project h3 {
+    font-size: 1em;
+    color: #000;
+    margin: 0;
+}
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px; /* optional */
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* green */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; /* remove underline from links */
+}
+        /* Include the revised CSS here */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-5 left-partition">
+                <img src="./profile_pic.png" alt="Profile Photo" class="profile-photo">
+                <div class="name">John Misquitta</div>
+                <div class="designation">Software Engineer</div>
+                <div class="description">Fullstack Software Engineer and AI Developer with a Master's in Computer Applications. Passionate about innovating in AI, ML, and web development. Let's connect and create impactful solutions together!</div>
+                <div class="description">For projects and collaboration email me at</div>
+                <div class="description">➥ johnmisquittaoffice@gmail.com</div>
+            </div>
+            <div class="col-12 col-md-7 right-partition">
+              <div class="button-container">
+                <button class="button">Follow</button>
+                <a class="button" href="https://medium.com">medium.com</a>
+                <a class="button" href="https://www.buymeacoffee.com">buymeacoffee.com</a>
+              </div>
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="header">
+                            <h1>Sentiment Analysis on Social Media Posts</h1>
+                            <h1>(Natural Language Processing - NLP)</h1>
+                            <h1>(Project Description)</h1>
+                        </div>
+                        <div class="content scrollable">
+                            <p>Implemented a sentiment analysis system to analyze the sentiment of social media posts. The project utilized Natural Language Processing (NLP) techniques to preprocess text data and employed a machine learning model to classify posts as positive, negative, or neutral. The model was trained on a dataset of labeled social media posts and achieved good accuracy in sentiment prediction.</p>
+                        </div>
+                        <div class="project">
+                            <h3>View project</h3>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="header">
+                            <h1>Sentiment Analysis on Social Media Posts</h1>
+                            <h1>(Natural Language Processing - NLP)</h1>
+                            <h1>(Project Description)</h1>
+                        </div>
+                        <div class="content scrollable">
+                            <p>Implemented a sentiment analysis system to analyze the sentiment of social media posts. The project utilized Natural Language Processing (NLP) techniques to preprocess text data and employed a machine learning model to classify posts as positive, negative, or neutral. The model was trained on a dataset of labeled social media posts and achieved good accuracy in sentiment prediction.</p>
+                        </div>
+                        <div class="project">
+                            <h3>View project</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

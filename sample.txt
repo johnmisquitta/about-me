@@ -1,0 +1,33 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-4 left-partition">
+                 <img src="./profile_pic.png" alt="Profile Photo" class="profile-photo">
+                <div class="name">John Misquitta</div>
+                <div class="designation">Software Engineer</div>
+                <div class="description">Fullstack Software Engineer and AI Developer with a Master's in Computer Applications. Passionate about innovating in AI, ML, and web development. Let's connect and create impactful solutions together!</div>
+                <div class="description">For projects and collaboration email me at</div>
+                <div class="description">➥ johnmisquittaoffice@gmail.com</div>
+            </div>
+             <div class="partition-line"></div>
+             <div class="col-12 col-md-8 right-partition">
+                <div class="square-box">
+                    <div class="content">
+                        <h3>Title 1</h3>
+                        <p>Description 1</p>
+                        <div class="partition"></div>
+                        <a href="your_project_page_url">View Projects</a>
+                    </div>
+                </div>
+                <div class="square-box">
+                    <div class="content">
+                        <h3>Title 2</h3>
+                        <p>Description 2</p>
+                        <div class="partition"></div>
+                        <a href="your_project_page_url">View Projects</a>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            
+        </div>
